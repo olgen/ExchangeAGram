@@ -25,6 +25,8 @@ class FilterViewController: UIViewController,
 
     var context = CIContext(options: nil)
 
+    let placeHolderImage = UIImage(named: "Placeholder")
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +36,6 @@ class FilterViewController: UIViewController,
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         layout.itemSize = CGSize(width: 150.0, height: 150.0)
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
-
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = UIColor.whiteColor()
@@ -48,21 +49,24 @@ class FilterViewController: UIViewController,
         return filters.count
     }
 
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(collectionView: UICollectionView,
+       cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
 
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("MyCell", forIndexPath: indexPath) as FilterCell
 
         let filterQueue:dispatch_queue_t = dispatch_queue_create("filter queue", nil)
-        cell.imageView.image = UIImage(named: "Placeholder")
-
-        // run the calc in the background
-        dispatch_async(filterQueue, { () -> Void in
-            let filterImage = self.filteredImageFromImage(self.thisFeedItem.image, filter: self.filters[indexPath.row])
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                cell.imageView.image = filterImage
+        if cell.imageView.image == nil {
+            cell.imageView.image = placeHolderImage
+            
+            // run the calc in the background
+            dispatch_async(filterQueue, { () -> Void in
+                let filterImage = self.filteredImageFromImage(self.thisFeedItem.thumbnail, filter: self.filters[indexPath.row])
+                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    cell.imageView.image = filterImage
+                })
             })
-        })
-
+        }
+        
         return cell
     }
 

@@ -59,10 +59,11 @@ class FeedViewController: UIViewController,
     }
 
     // UIImagePickerControllerDelegate
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController,
+       didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         let image = info[UIImagePickerControllerOriginalImage] as UIImage
-        println(image)
         let imageData  = UIImageJPEGRepresentation(image, 1.0)
+        let thumbnailData = UIImageJPEGRepresentation(image, 0.1)
 
         let ctx = (UIApplication.sharedApplication().delegate as AppDelegate).managedObjectContext
         let entityDescription = NSEntityDescription.entityForName("FeedItem", inManagedObjectContext: ctx!)
@@ -71,6 +72,7 @@ class FeedViewController: UIViewController,
             insertIntoManagedObjectContext: ctx!)
 
         feedItem.image = imageData
+        feedItem.thumbnail = thumbnailData
         feedItem.caption = "Test caption"
 
         (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
