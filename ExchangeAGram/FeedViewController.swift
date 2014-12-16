@@ -16,13 +16,22 @@ class FeedViewController: UIViewController,
     UIImagePickerControllerDelegate,
     UINavigationControllerDelegate {
 
-    @IBOutlet var collectoinView: UICollectionView!
+    @IBOutlet var collectionView: UICollectionView!
 
     var feedArray:[AnyObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        setupView()
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        setupView()
+        self.collectionView.reloadData()
+    }
+
+    func setupView(){
         let request = NSFetchRequest(entityName: "FeedItem")
         let appDelegate:AppDelegate = (UIApplication.sharedApplication().delegate as AppDelegate)
         let context:NSManagedObjectContext = appDelegate.managedObjectContext!
@@ -78,7 +87,7 @@ class FeedViewController: UIViewController,
         (UIApplication.sharedApplication().delegate as AppDelegate).saveContext()
 
         feedArray.append(feedItem)
-        self.collectoinView.reloadData()
+        self.collectionView.reloadData()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
