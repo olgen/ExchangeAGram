@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C1B81491A408DCA00137A42 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B81481A408DCA00137A42 /* FeedItem.swift */; };
 		4C8B5E3219FBD7BE006F708B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B5E3119FBD7BE006F708B /* AppDelegate.swift */; };
 		4C8B5E3519FBD7BE006F708B /* ExchangeAGram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B5E3319FBD7BE006F708B /* ExchangeAGram.xcdatamodeld */; };
 		4C8B5E3A19FBD7BE006F708B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8B5E3819FBD7BE006F708B /* Main.storyboard */; };
@@ -16,7 +17,6 @@
 		4C8B5E5519FBD942006F708B /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B5E5419FBD942006F708B /* FeedViewController.swift */; };
 		4C8B5E5719FBDB0A006F708B /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B5E5619FBDB0A006F708B /* FeedCell.swift */; };
 		4C8B5E5919FBDCAD006F708B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C8B5E5819FBDCAD006F708B /* MobileCoreServices.framework */; };
-		4C8B5E5B19FBE31F006F708B /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B5E5A19FBE31F006F708B /* FeedItem.swift */; };
 		4CD6E1BB19FBF16700EFED4F /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6E1BA19FBF16700EFED4F /* FilterViewController.swift */; };
 		4CD6E1BF19FBF57200EFED4F /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD6E1BE19FBF57200EFED4F /* FilterCell.swift */; };
 		4CD6E1C419FBF89900EFED4F /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD6E1C119FBF89900EFED4F /* Placeholder.png */; };
@@ -35,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C1B81481A408DCA00137A42 /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		4C8B5E2C19FBD7BE006F708B /* ExchangeAGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExchangeAGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8B5E3019FBD7BE006F708B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C8B5E3119FBD7BE006F708B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +49,6 @@
 		4C8B5E5419FBD942006F708B /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		4C8B5E5619FBDB0A006F708B /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeedCell.swift; path = ../FeedCell.swift; sourceTree = "<group>"; };
 		4C8B5E5819FBDCAD006F708B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		4C8B5E5A19FBE31F006F708B /* FeedItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		4CD6E1BA19FBF16700EFED4F /* FilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		4CD6E1BE19FBF57200EFED4F /* FilterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		4CD6E1C119FBF89900EFED4F /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Placeholder.png; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		4CD6E1BD19FBF18300EFED4F /* models */ = {
 			isa = PBXGroup;
 			children = (
-				4C8B5E5A19FBE31F006F708B /* FeedItem.swift */,
+				4C1B81481A408DCA00137A42 /* FeedItem.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -272,7 +272,7 @@
 				4C8B5E3219FBD7BE006F708B /* AppDelegate.swift in Sources */,
 				4C8B5E5719FBDB0A006F708B /* FeedCell.swift in Sources */,
 				4C8B5E5519FBD942006F708B /* FeedViewController.swift in Sources */,
-				4C8B5E5B19FBE31F006F708B /* FeedItem.swift in Sources */,
+				4C1B81491A408DCA00137A42 /* FeedItem.swift in Sources */,
 				4C8B5E3519FBD7BE006F708B /* ExchangeAGram.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
